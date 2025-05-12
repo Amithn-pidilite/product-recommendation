@@ -1,46 +1,34 @@
-import { useMutation } from '@tanstack/react-query';
-import { fetchApi } from './fetch';
+import { useMutation } from "@tanstack/react-query";
+import { fetchApi } from "./fetch";
+// import { baseUrl } from "../../utils/baseurl";
+import { useNavigate } from "react-router-dom";
 
 // Login mutation
 export const useLogin = () => {
+  const navigate = useNavigate();
   return useMutation({
-    mutationFn: async (credentials) => {
-      const data = await fetchApi('/auth/login', {
-        method: 'POST',
-        body: JSON.stringify(credentials),
+    mutationFn: async ({ username }) => {
+      const data = await fetchApi("/v1/proponent/user/login", {
+        method: "POST",
+        body: JSON.stringify({ username: username }),
       });
       return data;
     },
     onSuccess: (data) => {
-      localStorage.setItem('token', data.token);
-    },
-  });
-};
-
-// Register mutation
-export const useRegister = () => {
-  return useMutation({
-    mutationFn: async (userData) => {
-      const data = await fetchApi('/auth/register', {
-        method: 'POST',
-        body: JSON.stringify(userData),
-      });
-      return data;
+      localStorage.setItem("username", data.data.username);
+      navigate("/home");
     },
   });
 };
 
 // Logout mutation
 export const useLogout = () => {
+  const navigate = useNavigate();
   return useMutation({
-    mutationFn: async () => {
-      const data = await fetchApi('/auth/logout', {
-        method: 'POST',
-      });
-      return data;
+    mutationFn: () => {
+      localStorage.removeItem("username");
+      navigate("/login");
     },
-    onSuccess: () => {
-      localStorage.removeItem('token');
-    },
+    onSuccess: () => {},
   });
-}; 
+};
