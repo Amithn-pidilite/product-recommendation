@@ -38,15 +38,15 @@ const Login = () => {
   };
 
   return (
-    <div className=" flex justify-center items-center bg-[#360133] min-h-screen w-full">
+    <div classNameName=" flex justify-center items-center bg-[#360133] min-h-screen w-full">
       <div
-        className={`login-box slide-${step}${animating ? " animating" : ""}`}
+        classNameName={`login-box slide-${step}${animating ? " animating" : ""}`}
       >
         {isPending ? (
           <div role="status">
             <svg
               aria-hidden="true"
-              class="w-10 h-10 text-gray-200 animate-spin dark:text-gray-200 fill-blue-600"
+              className="w-10 h-10 text-gray-200 animate-spin dark:text-gray-200 fill-blue-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -60,28 +60,28 @@ const Login = () => {
                 fill="currentFill"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         ) : (
-          <div className="w-full">
-            <h2 className="login-title">Login</h2>
+          <div classNameName="w-full">
+            <h2 classNameName="login-title">Login</h2>
             <form onSubmit={handlePhoneSubmit}>
-              <div className="form-group phone-group">
-                <div className="phone-input-wrapper">
+              <div classNameName="form-group phone-group">
+                <div classNameName="phone-input-wrapper">
                   <input
                     id="phone"
                     value={phone}
                     onChange={handlePhoneInput}
                     placeholder="Enter phone number"
                     required
-                    className="rounded-lg p-4 border-[1px] border-gray-500 bg-gray-100 w-full"
+                    classNameName="rounded-lg p-4 border-[1px] border-gray-500 bg-gray-100 w-full"
                   />
                 </div>
               </div>
               <button
                 disabled={phone.length !== 10}
                 type="submit"
-                className={`bg-[#360133] text-white rounded-lg p-4 w-full font-bold text-xl ${
+                classNameName={`bg-[#360133] text-white rounded-lg p-4 w-full font-bold text-xl ${
                   phone.length !== 10 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
