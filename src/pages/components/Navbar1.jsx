@@ -3,7 +3,7 @@ import LunchDiningOutlinedIcon from "@mui/icons-material/LunchDiningOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SideSheet from "../../../utils/components/Sidesheet";
 
-export default function Navbar({
+export default function Navbar1({
   isSidebarOpen,
   setIsSidebarOpen,
   isCartOpen,
