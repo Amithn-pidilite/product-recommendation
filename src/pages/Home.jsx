@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/Home.css";
-import Navbar from "./components/navbar";
+import Navbar1 from "./components/Navbar1";
 
 // Sample product data with badges and categories
 
@@ -10,13 +10,12 @@ const Home = () => {
   //navbar
   return (
     <div className="p-4 bg-[#360133] min-h-screen w-full">
-      <Navbar
+      <Navbar1
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
         isCartOpen={isCartOpen}
         setIsCartOpen={setIsCartOpen}
       />
-
     </div>
   );
 
