@@ -38,9 +38,9 @@ const Login = () => {
   };
 
   return (
-    <div classNameName=" flex justify-center items-center bg-[#360133] min-h-screen w-full">
+    <div className=" flex justify-center items-center bg-[#360133] min-h-screen w-full">
       <div
-        classNameName={`login-box slide-${step}${animating ? " animating" : ""}`}
+        className={`login-box slide-${step}${animating ? " animating" : ""}`}
       >
         {isPending ? (
           <div role="status">
@@ -63,25 +63,25 @@ const Login = () => {
             <span className="sr-only">Loading...</span>
           </div>
         ) : (
-          <div classNameName="w-full">
-            <h2 classNameName="login-title">Login</h2>
+          <div className="w-full">
+            <h2 className="login-title">Login</h2>
             <form onSubmit={handlePhoneSubmit}>
-              <div classNameName="form-group phone-group">
-                <div classNameName="phone-input-wrapper">
+              <div className="form-group phone-group">
+                <div className="phone-input-wrapper">
                   <input
                     id="phone"
                     value={phone}
                     onChange={handlePhoneInput}
                     placeholder="Enter phone number"
                     required
-                    classNameName="rounded-lg p-4 border-[1px] border-gray-500 bg-gray-100 w-full"
+                    className="rounded-lg p-4 border-[1px] border-gray-500 bg-gray-100 w-full"
                   />
                 </div>
               </div>
               <button
                 disabled={phone.length !== 10}
                 type="submit"
-                classNameName={`bg-[#360133] text-white rounded-lg p-4 w-full font-bold text-xl ${
+                className={`bg-[#360133] text-white rounded-lg p-4 w-full font-bold text-xl ${
                   phone.length !== 10 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
